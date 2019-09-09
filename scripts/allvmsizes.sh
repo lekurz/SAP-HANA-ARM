@@ -323,9 +323,15 @@ else
     if [ "$HANAVER" = "SAP HANA PLATFORM EDITION 2.0 SPS03 REV30 (51053061)" ]
     then
       hanapackage="51053061"
-    else
-      echo "not 51053061, default to 51052325"
-      hanapackage="51052325"
+	else
+	  echo "not 51053061"
+      if [ "$HANAVER" = "SAP HANA PLATFORM EDITION 2.0 SPS04 REV40 (51053787)" ]
+      then
+        hanapackage="51053787"
+      else
+        echo "not 51053787, default to 51052325"
+        hanapackage="51052325"
+	  fi
     fi
   fi
 fi
@@ -367,7 +373,7 @@ fi
 cd /hana/data/sapbits
 echo "hana download start" >> /tmp/parameter.txt
 /usr/bin/wget --quiet $Uri/SapBits/md5sums
-/usr/bin/wget --quiet "https://raw.githubusercontent.com/AzureCAT-GSI/SAP-HANA-ARM/master/hdbinst.cfg"
+/usr/bin/wget --quiet "https://raw.githubusercontent.com/lekurz/SAP-HANA-ARM/master/hdbinst.cfg"
 echo "hana download end" >> /tmp/parameter.txt
 
 date >> /tmp/testdate
