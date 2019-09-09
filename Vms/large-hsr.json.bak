@@ -189,7 +189,7 @@
         "diskConfig": "[variables(concat('diskConfig_', parameters('vmSize')))]",
         "diskConfig_Standard_M64ms": {
             "shared": 1023,
-            "sap": 63,
+            "sap": 511,
             "backup": 2047,
             "backup2": 2047,
             "data1": 1023,
@@ -200,7 +200,7 @@
         },
         "diskConfig_Standard_M128s": {
             "shared": 1023,
-            "sap": 63,
+            "sap": 511,
             "backup": 2047,
             "backup2": 2047,
             "data1": 1023,

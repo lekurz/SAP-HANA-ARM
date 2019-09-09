@@ -141,7 +141,7 @@
         "diskConfig": "[variables(concat('diskConfig_', parameters('vmSize')))]",
         "diskConfig_Standard_M64s": {
             "shared": 1023,
-            "sap": 63,
+            "sap": 511,
             "backup1": 1023,
             "backup2": 1023,
             "data1": 1023,
